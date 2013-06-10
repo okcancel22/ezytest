@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+	<head>
+		<script type="text/javascript" data-main="scripts/init.js" src="scripts/require.js"></script>
+        <script src="scripts/require.js"></script>
+        <!-- the type attribute was omitted because it is not necessary in an html5 document -->
+        <link rel="stylesheet/less" href="styles/main.less">
+        <script src="scripts/less.js"></script>
+        <link rel="stylesheet/css" href="styles/main.css">
+
+    </head>
+	<body>
+		<p>First name: <input id="name" data-bind="value: firstName" /></p>
+		<p>First name capitalized: <strong data-bind="text: firstNameCaps"></strong></p>
+		<p data-bind="text: count"></p>
+		<button class="addBtn">Add Name</button>
+		<h3>Names</h3>
+		<!-- ko foreach: names -->
+			<p data-bind="editableRow: $data">
+				<span class="editRow">
+					<input data-bind="value: name"/>
+					<a class="updateBtn">Update</a>
+					<a class="cancelBtn">Cancel</a>
+				</span> 
+				<span class="detailRow">
+					<span data-bind="text: name"></span>
+					<a class="editBtn">Edit</a>
+					<a class="removeBtn" data-bind="click: $parent.remove">Remove</a>
+				</span>
+			</p>
+		<!-- /ko -->
+	</body>
+</html>

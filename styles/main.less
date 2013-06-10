@@ -1,0 +1,55 @@
+/*
+Main styles
+Author: Andres Guzman
+Year: 2013
+...
+*/
+
+/* ------------------------------------
+Variables
+---------------------------------------*/
+@font-family-base: Arial, Helvetica, sans-serif;
+@font-size-base: 15px;
+@link-color-base: #DF3701;
+@font-color-base: #494949;
+
+/*
+variables are used here just to make the project future-proof,
+although in a small file they're not actually that much necessary
+*/
+
+/* ------------------------------------
+Mains styles start
+---------------------------------------*/
+
+
+body {
+  font: @font-size-base @font-family-base;  /* shorthand property used */
+  color: @font-color-base;
+}
+
+/*
+the 'a' anchor element is used here instead of pseudo classes combo: a:link,  a:visited, a:hover, a:active
+because in this case we only need two rules for all anchor elements.
+*/
+
+a {
+  color: @link-color-base;
+}
+
+a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*
+attribute selector used in this case to avoid altering the html file, the only caveat
+would be that it's not compatible with IE versions lower than 7
+*/
+
+p[data-bind="text: count"] {
+  position: fixed;
+  top: 8px; /* a little of margin was added to this element to make it a little bit more visually accessible */
+  right: 8px;
+  margin: 0px;
+}
